@@ -1,0 +1,119 @@
+Comando para vê nde está ocalizada a pasta do banco de dados 
+
+show variables like "datadir"
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+/* Modelagem Básica*/
+
+
+Cadastro de clientes
+
+Nome - CARACTERE(30)
+CPF - NUMEROCo (11)
+Email- CARACTERE(30)
+Telefone - CARACTERE(30)
+Endereço - CARACTERE(100)
+Sexo - CARACTERE(1)
+
+/*Procesos de modelagem */
+
+
+Modelagem conceitual- Escopo de dados do banco, atributos do banco
+////
+Modelagem Lógica- Modelagem do banco de dados em rpogramas como o Brmodelo
+//////
+Modelagem física- Script do Banco de dados 
+
+/* Comandos do MySQL*/
+
+/* CRIANDO O BANCO DE DADOS */
+
+
+CREATE DATABASE "NOME DO PROJETO"
+
+CREATE DATABASE PROJETO1;
+
+
+/* CONECTANDO AO BANCO DE DADOS */
+
+
+USE "NOME DO PROJETO"
+USE PROJEOTO1
+ 
+ 
+ /* CRIANDO A TABELA CLIENTES */
+ 
+	CREATE TABLE CLIENTES(
+	
+	NOME VARCHAR(30),
+	CPF  INT(11),
+	EMAIL VARCHAR(30),
+	TELEFONE INT(30),
+	ENDERECO VARCHAR(30),
+	SEXO CHAR(1)
+);	
+ /* DESCOBRINDO TABELAS DOS BA BANCO DE DADOS*/
+ 
+ DESC "NOME DA TABELA"
+ DESC CLIENTES;
+
+/* iNSERINDO VALORES AS TABELAS*/
+
+INSERT INTO "NOME DA TABELA"
+
+
+
+INSERT INTO CLIENTES VALUES( 'Davi Caua',1,'davi.caua@hotmail.com','8','Rua cassilandro','M');
+
+INSERT INTO CLIENTES VALUES( 'Lucas',2,'lcsonic@hotmail.com','9','Rua cassilandro Barburda','M');
+
+
+/*INSERINDO A COLUNA COM OS NOMES    */ 
+
+INSERT INTO CLIENTES (NOME,CPF,EMAIL,TELEFONE,ENDERECO,SEXO) VALUES ('Lilian',4,'lilian@gmail.com','7','Rua professor','F');
+
+/* PROJETAR DADOS NA TELA */
+
+
+SELECT 'O que você quer ver' FROM 'Nome da tabela';
+
+
+SELECT nome, cpf, email FROM clientes;
+
+SELECT nome AS clientes, cpf, email FROM clientes;
+
+SELECT nome AS clientes, cpf, email NOW() AS DATA_HORA FROM clientes; - /* MOSTRANDO HORA */
+
+
+/* SELEÇÃO DE DADOS WHERE E LIKE */
+
+/* WHERE */
+SELECT NOME, SEXO FROM CLIENTES WHERE SEXO = 'M';
+
+SELECT NOME, SEXO FROM CLIENTES WHERE SEXO = 'F'; 
+
+/* Like */
+
+
+SELECT NOME, SEXO FROM CLIENTES WHERE ENDERECO LIKE PROFESSOR;
+
+/* CARACTERE CORINGA % -> QUALQUER COISA */
+
+SELECT NOME, SEXO FROM CLIENTES WHERE ENDERECO LIKE PROFESSOR%; "TERMINA COM QUALQUER COISA"
+
+SELECT NOME FROM PESSOA WHERE NOME LIKE '%Dias'; "COMEÇA COM QUALQUER COISA"
+
+
+/*OPERADORES LÓGICOS*/
+
+OR -> PARA QUE A SAIDA SEJA VERDADEIRA, BASTA QUE APENAS UMA CONDIÇÃO SEJA VERDADEIRA
+AND -> PARA QUE A SAIDA SEJA VERDADEIRA TODAS AS CONDIÇÕES TEM QUE SEREM VERDADEIRAS
+
+/*CONTANDO OS REGISTRO DE UMA TABELA*/
+
+SELECT COUNT (*) FROM CLIENTES;
+
+SELECT COUNT (*) AS 'Quantidade de Registro na tabela clientes' 
+from clientes;
